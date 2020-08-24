@@ -1,0 +1,173 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+	font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	line-height:20px;
+}
+
+ul{
+	display:inline-block;
+}
+.mynavbar{
+	top:0;
+	width:100%;
+	float:right;
+	border-bottom:1px solid #cbb;
+	margin-bottom:10px;
+}	
+.mycontainer{
+	padding:10px 15px 15px 10px;
+}
+.search{ 
+     float: right; 
+     
+     margin: 0; 
+} 
+input[type=search] {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-bottom: 5px;
+  margin-right: 16px;
+  font-size: 17px;
+  color:#666666;
+  border-bottom: 1px solid #666666;
+}
+input[type=search]:focus{
+	box-shadow: inset 0 -2px 0 #2196f3;
+	
+}
+@font-face{
+	font-family: persiannum;
+	src: url(../font/gandom-font-v0.4.5/Farsi-Digits/Gandom-FD.woff);
+}
+.jalali-date{
+	font-family: persiannum;
+	
+}
+.calendar {
+  width: 1300px;
+  margin: auto;
+  font-size: 13px;
+}
+#date-time{
+	padding-right:5px;
+	border-right:2px solid black;
+}
+.calendar tr, .calendar td {
+  border: 1px solid #888;
+  
+}
+
+.calendar th {
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.calendar tr td {
+
+  padding: 20px 0px 15px 5px;
+}
+
+.month {
+  font-size: 25px;
+}
+
+.date {
+  font-size: 16px;
+  padding-bottom:5px;
+}
+
+ul {
+  height: 100%;
+  padding: 0px 5px 0px 20px;
+}
+
+a {
+  color: #17a2b8;
+  text-decoration:none;
+}
+a:hover{
+	text-decoration:none;
+	background:#bfbfbf
+;
+	
+}
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.btn {
+  outline: none;
+  color: black;
+  background-color: transparent;
+  box-shadow: 0 0 0 0;
+}
+.form {
+  margin: auto;
+}
+
+.form input, .form select, .form textarea {
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  outline: none;
+  background: none;
+  padding: 5px;
+  width: 100%;
+}
+
+.clearfix {
+  margin: 15px;
+}
+.event-link{
+	display:inline-block; 
+	overflow:hidden;
+	border: solid 0.5px #ddd;
+	border-radius: 5px;
+	margin-bottom:5px;
+	padding:2px 3px;
+}

@@ -1,0 +1,30 @@
+{% extends "cal/base.html" %}
+{% block title %}Search{% endblock %}
+{% block content %}
+{% if query %}
+<h1>Events containing "{{ query }}" : </h1>
+<h3>
+    {% with resaults.count as total_resaults %}
+    Found {{ total_resaults }} resault{{ total_resaults|pluralize }}
+    {% endwith %}
+</h3>
+
+{% for event in resaults %}
+<div class="list">
+
+    <a class='event_title' href='{{ event.get_abs_url }}'>{{ event.title }}</a>
+	<br>
+	Author : {{ event.author }}
+	<br>
+	AT : {{ event.date }} , {{ event.time }}
+	<br>
+    {{ event.body }}
+    
+</div>
+<hr>
+    {% empty %}
+    <p>There are no resaults for your query.</p>
+{% endfor %}
+
+{% endif %}
+{% endblock %}

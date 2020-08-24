@@ -1,0 +1,14 @@
+{% extends 'cal/base.html' %}
+
+{% block content %}
+	
+<div class="clearfix">
+	<a class="btn btn-dark left" href="{% url 'cal:calendar' %}?{{ prev_month }}"> Previous Month </a>
+	<a class="btn btn-dark right" href="{% url 'cal:calendar' %}?{{ next_month }}"> Next Month </a>
+	<a class='btn btn-dark center' href="{% url 'cal:event_new' %}" style='margin-left:458px;'> Create New Event</a>
+</div>
+
+{{ calendar }}
+
+	
+{% endblock %}
