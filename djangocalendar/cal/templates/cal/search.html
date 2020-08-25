@@ -2,29 +2,35 @@
 {% block title %}Search{% endblock %}
 {% block content %}
 {% if query %}
+{% block title %}search{% endblock %}
+<div class='list-search'>
 <h1>Events containing "{{ query }}" : </h1>
+<br>
 <h3>
     {% with resaults.count as total_resaults %}
     Found {{ total_resaults }} resault{{ total_resaults|pluralize }}
     {% endwith %}
 </h3>
-
+<br>
+<hr>
+<hr>
 {% for event in resaults %}
 <div class="list">
 
-    <a class='event_title' href='{{ event.get_abs_url }}'>{{ event.title }}</a>
+    <h3><a class='event_title' href='{{ event.get_abs_url }}'>{{ event.title }}</a></h3>
+	<h6 class='author'>Author : {{ event.author }}</h6>
+	
+	<h6 class='author'>AT : {{ event.date }} , {{ event.time }}</h6>
 	<br>
-	Author : {{ event.author }}
 	<br>
-	AT : {{ event.date }} , {{ event.time }}
-	<br>
-    {{ event.body }}
+    <p>{{ event.body }}</p>
     
 </div>
 <hr>
     {% empty %}
     <p>There are no resaults for your query.</p>
 {% endfor %}
+</div>
 
 {% endif %}
 {% endblock %}

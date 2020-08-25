@@ -1,5 +1,5 @@
 html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+h1, h4, h5, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
@@ -62,6 +62,10 @@ ul{
      
      margin: 0; 
 } 
+.list-search{
+	padding:60px;
+	
+}
 input[type=search] {
   float: right;
   padding: 6px;
@@ -82,7 +86,6 @@ input[type=search]:focus{
 }
 .jalali-date{
 	font-family: persiannum;
-	
 }
 .calendar {
   width: 1300px;
@@ -94,53 +97,40 @@ input[type=search]:focus{
 	border-right:2px solid black;
 }
 .calendar tr, .calendar td {
-  border: 1px solid #888;
-  
+  border: 1px solid #888; 
 }
-
 .calendar th {
   padding: 10px;
   text-align: center;
   font-size: 18px;
 }
-
 .calendar tr td {
-
   padding: 20px 0px 15px 5px;
 }
-
 .month {
   font-size: 25px;
 }
-
 .date {
   font-size: 16px;
   padding-bottom:5px;
 }
-
 ul {
   height: 100%;
   padding: 0px 5px 0px 20px;
 }
-
 a {
   color: #17a2b8;
   text-decoration:none;
 }
-a:hover{
-	text-decoration:none;
-	background:#bfbfbf
-;
-	
+.event-title:hover{
+	background: white;
 }
 .left {
   float: left;
 }
-
 .right {
   float: right;
 }
-
 .btn {
   outline: none;
   color: black;
@@ -150,7 +140,6 @@ a:hover{
 .form {
   margin: auto;
 }
-
 .form input, .form select, .form textarea {
   border-radius: 5px;
   border: 1px solid #ddd;
@@ -159,15 +148,22 @@ a:hover{
   padding: 5px;
   width: 100%;
 }
-
 .clearfix {
   margin: 15px;
 }
 .event-link{
 	display:inline-block; 
 	overflow:hidden;
-	border: solid 0.5px #ddd;
+	border: solid 0.5px #bbb;
 	border-radius: 5px;
 	margin-bottom:5px;
 	padding:2px 3px;
+}
+.event-link:hover{
+	background:#bfbfbf;
+	text-decoration:none;
+}
+.author{
+	color: #666;
+	font-size: 15px;
 }

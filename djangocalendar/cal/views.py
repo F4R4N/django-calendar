@@ -24,9 +24,11 @@ class CalendarView(generic.ListView):
         context['calendar'] = mark_safe(html_cal)
         context['prev_month'] = prev_month(d)
         context['next_month'] = next_month(d)
-        context['today'] = datetime.today()
         context['latest_events'] = latest_events
-        
+        context['year'] = datetime.today().year
+        context['month'] = datetime.today().month
+        context['day'] = datetime.today().day
+
         return context
 
 def get_date(req_day):
