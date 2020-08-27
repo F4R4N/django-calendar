@@ -9,8 +9,8 @@ from django.urls import reverse
 from .forms import EventForm, SearchForm
 from .models import *
 from .utils import Calendar
-from django.contrib.postgres.search import SearchVector
-
+import jdatetime
+from hijri_converter import convert
 class CalendarView(generic.ListView):
     model = Event
     template_name = 'cal/calendar.html'
@@ -21,6 +21,13 @@ class CalendarView(generic.ListView):
         cal = Calendar(d.year, d.month)
         html_cal = cal.formatmonth(withyear=True)
         latest_events = Event.objects.order_by('-created')[:4]
+        
+        
+        # mil_year = int(convert.datetime.datetime.now().strftime('%Y'))
+        # mil_month = int(convert.datetime.datetime.now().strftime('%m'))
+        # mil_day = int(convert.datetime.datetime.now().strftime('%d'))
+        # hij_date = convert.Gregorian(mil_year, mil_month, mil_day).to_hijri()
+        
         context['calendar'] = mark_safe(html_cal)
         context['prev_month'] = prev_month(d)
         context['next_month'] = next_month(d)
@@ -28,7 +35,9 @@ class CalendarView(generic.ListView):
         context['year'] = datetime.today().year
         context['month'] = datetime.today().month
         context['day'] = datetime.today().day
-
+        
+        # context['jal_date'] = str(jdatetime.datetime.now().strftime('%B %Y'))
+        # context['hij_date'] = hij_date.month_name() + ' ' + str(hij_date.year)
         return context
 
 def get_date(req_day):
@@ -72,5 +81,5 @@ def event_search(request):
         form = SearchForm(request.GET)
         if form.is_valid():
             query = form.cleaned_data['query']
-            resaults = Event.objects.annotate(search=SearchVector('body', 'title', 'author'), ).filter(search=query)
+            resaults = Event.objects.filter(title__contains=query) or Event.objects.filter(body__contains=query) or Event.objects.filter(author__contains=query)
     return render(request, 'cal/search.html', {'form': form, 'query': query, 'resaults': resaults})

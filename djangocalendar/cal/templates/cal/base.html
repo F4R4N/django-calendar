@@ -13,7 +13,7 @@
   <link rel="stylesheet" type="text/css" href="{% static 'cal/css/styles.css' %}">
   <title>Django Calendar App</title>
 </head>
-<body onload='today()'>
+<body>
 	<div class='mynavbar'>
 		<div class='mycontainer'>
 			<a href="{% url 'cal:calendar' %}" style='border-right: solid 2px black;padding-right: 4px;'>Home</a>
@@ -43,12 +43,13 @@
   
 </body>
 <script>
-	el = document.getElementById('date-time')
 	time = setInterval(now, 1000)
 	function now(){
+		el = document.getElementById('date-time')
 		d = new Date()
 		el.innerHTML = d.toLocaleString()
 	}
+	
 	function today(){
 		var date = new Date()
 		var server_year = {{ year }}
@@ -58,6 +59,24 @@
 		todays.style.background = '#eee'
 		todays.title = 'Today'
 	}
+	
+	
+		el_jal = document.getElementById('jal-month').innerHTML
+		el_hij = document.getElementById('hij-month').innerHTML
+		m = document.getElementsByClassName('month')
+		for(var i=0;i<m.length;i++){
+			if(m[i] !== undefined){
+				m = m[i]
+			}
+		}
+		m.innerHTML += el_jal + el_hij
+	
+
+	
+	today()
+	
+	
+	
 	
 
     

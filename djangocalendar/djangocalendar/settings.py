@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cal.apps.CalConfig',
-    'django.contrib.postgres',
 ]
 
 MIDDLEWARE = [
@@ -77,12 +76,8 @@ WSGI_APPLICATION = 'djangocalendar.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'calender',
-        'USER': 'blog',
-        'PASSWORD': 'faran',
-        'HOST': '127.0.0.1',
-        'PORT': 5432,
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'database.db',
     }
 }
 
